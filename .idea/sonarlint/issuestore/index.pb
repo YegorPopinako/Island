@@ -59,3 +59,7 @@ O
 -src/main/java/ua/javarush/tasks/FeedTask.java,e\8\e8f09d698a878e9747f7386f2e4fe7507b45267f
 ]
 -src/main/java/ua/javarush/tasks/MoveTask.java,9\7\9757e85fed85db374c54c82091c51baaf1cff418
+c
+3src/main/java/ua/javarush/island/AnimalFactory.java,b\a\ba106ebb16e82b0762728aad76186720bdfa96be
+c
+3src/main/java/ua/javarush/animal/AnimalFactory.java,a\c\acb6b49a655571ba3bb814b30edf2cdd2134dfb2
