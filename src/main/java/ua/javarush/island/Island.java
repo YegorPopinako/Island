@@ -9,11 +9,11 @@ public class Island {
     private final int coordinateY;
 
     @Getter
-    private final Area area[][];
+    private final Area areas[][];
 
     public Island(int coordinateX, int coordinateY) {
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
-        area = new Area[coordinateX][coordinateY];
+        areas = new Area[coordinateX][coordinateY];
     }
 }
