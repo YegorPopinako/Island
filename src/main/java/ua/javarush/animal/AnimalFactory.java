@@ -20,7 +20,7 @@ public final class AnimalFactory {
         CLASS_TO_INSTANCE_SUPPLIER.put(Wolf.class, Wolf::new);
     }
 
-    public static Animal createAnimal(Class<? extends Animal> aClass) {
-        return CLASS_TO_INSTANCE_SUPPLIER.getOrDefault(aClass, ANIMAL_NOT_FOUND_SUPPLIER).get();
+    public static Animal createAnimal(Class<? extends Animal> clazz) {
+        return CLASS_TO_INSTANCE_SUPPLIER.getOrDefault(clazz, ANIMAL_NOT_FOUND_SUPPLIER).get();
     }
 }

@@ -22,7 +22,7 @@ public abstract class Animal {
 
     public Direction move() {
         ThreadLocalRandom random = ThreadLocalRandom.current();
-        return directions[random.nextInt(directions.length)];
+        return directions[random.nextInt(0, directions.length)];
     }
 
     public abstract void eat(Area area);

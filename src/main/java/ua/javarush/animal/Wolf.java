@@ -21,7 +21,7 @@ public class Wolf extends Herbivorous {
         return null;
     }
 
-    public AnimalUnit getAnimalUnit() {
+    public static AnimalUnit getAnimalUnit() {
         return ANIMAL_UNIT;
     }
 }
