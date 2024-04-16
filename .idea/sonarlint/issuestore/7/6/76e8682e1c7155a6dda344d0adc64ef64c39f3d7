@@ -1,3 +1,20 @@
 
-r	java:S106"+Replace this use of System.out by a logger.(°öØÄşÿÿÿÿ8¨õú’î1J$417367cd-7389-4b97-b0dd-cae252b902a5
-m	java:S106"+Replace this use of System.out by a logger.(›”¦Û8¨õú’î1J$33da31ad-7698-493d-af2e-e920470d0ae5
+r	java:S106 "+Replace this use of System.out by a logger.(°öØÄşÿÿÿÿ8Ë‘Ó¯î1J$cbc2b9a1-f2a1-4ec8-887e-6b38fb6d6daa
+m	java:S106!"+Replace this use of System.out by a logger.(›”¦Û8Ì‘Ó¯î1J$d8c68c7a-5f27-40c7-9307-f54bd3fa2d24
+X
+java:S1128"6Remove this unused import 'ua.javarush.animal.Animal'.(ƒ¸ÍÓüÿÿÿÿ8‰Ø¯î1
+^
+java:S1128"<Remove this unused import 'ua.javarush.direction.Direction'.(Ìëù¥üÿÿÿÿ8‰Ø¯î1
+T
+java:S1128"7Remove this unused import 'ua.javarush.tasks.MoveTask'.(¨€ª8‰Ø¯î1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8‘‰Ø¯î1
+P
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8‘‰Ø¯î1
+M
+java:S1128	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8‘‰Ø¯î1
+L
+java:S1128
+"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8‘‰Ø¯î1
+L
+java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8’‰Ø¯î1

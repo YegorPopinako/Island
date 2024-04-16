@@ -15,57 +15,23 @@ import java.util.concurrent.Executors;
 public class IslandController {
 
     private final Island island;
+
     private final ExecutorService executorService;
+
+    private final TaskManager taskManager;
 
     public IslandController(Island island) {
         this.island = island;
         this.executorService = Executors.newFixedThreadPool(1);
+        this.taskManager = new TaskManager(island, executorService);
     }
 
     public void start() {
         for (int i = 0; i < island.getDays(); i++) {
-            performMovementTasks();
+            taskManager.performMovementTasks(island);
             System.out.println(island);
             System.out.println("-".repeat(50));
         }
         executorService.shutdown();
-    }
-
-    private void performMovementTasks() {
-        List<MoveTask> tasks = new ArrayList<>();
-        Map<Class<? extends Animal>, Set<Animal>> animalsCopy;
-        for (Area[] row : island.getAreas()) {
-            for (Area area : row) {
-                animalsCopy = new HashMap<>(area.getAnimals());
-                calculateDestination(area, animalsCopy, tasks);
-            }
-        }
-        for (MoveTask task : tasks) {
-            executorService.submit(task);
-        }
-    }
-
-    private void calculateDestination(Area area, Map<Class<? extends Animal>, Set<Animal>> animalsCopy, List<MoveTask> tasks) {
-        for (Map.Entry<Class<? extends Animal>, Set<Animal>> entry : animalsCopy.entrySet()) {
-            for (Animal animal : entry.getValue()) {
-                Area destination = findAdjacentArea(area, animal);
-                tasks.add(new MoveTask(area, destination, animal));
-            }
-        }
-    }
-
-    private Area findAdjacentArea(Area area, Animal animal) {
-        Direction direction = animal.move();
-        int x = area.getCoordinateX() + direction.getDeltaX();
-        int y = area.getCoordinateY() + direction.getDeltaY();
-
-        int maxX = island.getSizeX() - 1;
-        int maxY = island.getSizeY() - 1;
-
-        if (x >= 0 && x <= maxX && y >= 0 && y <= maxY) {
-            return island.getAreas()[x][y];
-        } else {
-            return findAdjacentArea(area, animal);
-        }
     }
 }

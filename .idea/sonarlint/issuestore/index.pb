@@ -35,3 +35,5 @@ c
 3src/main/java/ua/javarush/animal/AnimalFactory.java,a\c\acb6b49a655571ba3bb814b30edf2cdd2134dfb2
 f
 6src/main/java/ua/javarush/island/IslandController.java,7\6\76e8682e1c7155a6dda344d0adc64ef64c39f3d7
+a
+1src/main/java/ua/javarush/island/TaskManager.java,d\d\dd7277b5f7ef014a7d68f43c8da5c68a17c4af90
