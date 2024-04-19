@@ -1,20 +1,20 @@
 
-r	java:S106 "+Replace this use of System.out by a logger.(°öØÄşÿÿÿÿ8Ë‘Ó¯î1J$cbc2b9a1-f2a1-4ec8-887e-6b38fb6d6daa
-m	java:S106!"+Replace this use of System.out by a logger.(›”¦Û8Ì‘Ó¯î1J$d8c68c7a-5f27-40c7-9307-f54bd3fa2d24
-X
-java:S1128"6Remove this unused import 'ua.javarush.animal.Animal'.(ƒ¸ÍÓüÿÿÿÿ8‰Ø¯î1
-^
-java:S1128"<Remove this unused import 'ua.javarush.direction.Direction'.(Ìëù¥üÿÿÿÿ8‰Ø¯î1
-T
-java:S1128"7Remove this unused import 'ua.javarush.tasks.MoveTask'.(¨€ª8‰Ø¯î1
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8‘‰Ø¯î1
-P
-java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8‘‰Ø¯î1
-M
-java:S1128	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8‘‰Ø¯î1
-L
+r	java:S106 "+Replace this use of System.out by a logger.(°öØÄşÿÿÿÿ8¬Éê•ï1J$c845e19e-e4ce-45b9-a237-465e22394c97
+m	java:S106!"+Replace this use of System.out by a logger.(›”¦Û8­Éê•ï1J$59d4342e-f09d-4b78-9e17-b4664c6da858
+~
+java:S1128"6Remove this unused import 'ua.javarush.animal.Animal'.(ƒ¸ÍÓüÿÿÿÿ8Ä’²–ï1J$fc1fbff4-0874-4881-b4e6-e7414c452552
+„
+java:S1128"<Remove this unused import 'ua.javarush.direction.Direction'.(Ìëù¥üÿÿÿÿ8Å’²–ï1J$78bba787-381e-4629-9c86-ae662b64195e
+z
+java:S1128"7Remove this unused import 'ua.javarush.tasks.MoveTask'.(¨€ª8Ç’²–ï1J$35475fed-7615-4ef6-b3cf-6367bf34ac92
+s
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8È’²–ï1J$23bd6527-fe03-4407-9d69-3d827c496ce7
+v
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8Ê’²–ï1J$060b945f-dbc3-4c2e-9f4b-992589b79223
+s
+java:S1128	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Ì’²–ï1J$fb2ca7d4-b476-40fe-8299-ead647a78c08
+r
 java:S1128
-"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8‘‰Ø¯î1
-L
-java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8’‰Ø¯î1
+"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8Ì’²–ï1J$585c464c-a264-46a3-9007-d31cb9f90f0a
+r
+java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8Í’²–ï1J$3829a321-4914-4f6e-962e-323d9d0d1cfe

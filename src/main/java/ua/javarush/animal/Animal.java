@@ -4,13 +4,12 @@ import lombok.EqualsAndHashCode;
 import ua.javarush.direction.Direction;
 import ua.javarush.island.Area;
 
+import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public abstract class Animal {
 
-    @EqualsAndHashCode.Include
     private final int id;
     private final int healthPoints;
     Direction[] directions = Direction.values();
@@ -31,5 +30,18 @@ public abstract class Animal {
 
     public boolean isAlive(){
         return healthPoints > 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return id == animal.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

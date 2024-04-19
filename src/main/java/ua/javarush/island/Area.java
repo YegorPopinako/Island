@@ -32,6 +32,7 @@ public class Area {
     private Area(int coordinateX, int coordinateY) {
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
+        initAnimals();
     }
 
     static {
@@ -40,20 +41,18 @@ public class Area {
     }
 
     public static Area initArea(int x, int y) {
-        Area area = new Area(x, y);
-        initAnimals(area);
-        return area;
+        return new Area(x, y);
     }
 
-    private static void initAnimals(Area area){
+    private void initAnimals() {
         ANIMAL_MAX.forEach((clazz, amount) -> {
             int number = ThreadLocalRandom.current().nextInt(1, amount + 1);
-            Set<Animal> animals = ConcurrentHashMap.newKeySet();
+            Set<Animal> newAnimals = ConcurrentHashMap.newKeySet();
             for(int i = 0; i < number; i++) {
                 Animal animal = AnimalFactory.createAnimal(clazz);
-                animals.add(animal);
+                newAnimals.add(animal);
             }
-            area.animals.put(clazz, animals);
+            this.animals.put(clazz, newAnimals);
         });
     }
 

@@ -28,7 +28,7 @@ public class TaskManager {
         for (Area[] row : island.getAreas()) {
             for (Area area : row) {
                 animalsCopy = new HashMap<>(area.getAnimals());
-                calculateDestination(area, animalsCopy, tasks);
+                calculateDestination(island, area, animalsCopy, tasks);
             }
         }
         for (MoveTask task : tasks) {
@@ -36,16 +36,17 @@ public class TaskManager {
         }
     }
 
-    private void calculateDestination(Area area, Map<Class<? extends Animal>, Set<Animal>> animalsCopy, List<MoveTask> tasks) {
+    private void calculateDestination(Island island, Area area, Map<Class<? extends Animal>, Set<Animal>> animalsCopy, List<MoveTask> tasks) {
         for (Map.Entry<Class<? extends Animal>, Set<Animal>> entry : animalsCopy.entrySet()) {
             for (Animal animal : entry.getValue()) {
-                Area destination = findAdjacentArea(area, animal);
-                tasks.add(new MoveTask(area, destination, animal));
+                Area destination = findAdjacentArea(island, area, animal);
+                tasks.add(new MoveTask(island, area, destination, animal));
             }
         }
     }
 
-    private Area findAdjacentArea(Area area, Animal animal) {
+
+    private Area findAdjacentArea(Island island, Area area, Animal animal) {
         Direction direction = animal.move();
         int x = area.getCoordinateX() + direction.getDeltaX();
         int y = area.getCoordinateY() + direction.getDeltaY();
@@ -53,10 +54,9 @@ public class TaskManager {
         int maxX = island.getSizeX() - 1;
         int maxY = island.getSizeY() - 1;
 
-        if (x >= 0 && x <= maxX && y >= 0 && y <= maxY) {
-            return island.getAreas()[x][y];
-        } else {
-            return findAdjacentArea(area, animal);
-        }
+        x = Math.max(0, Math.min(x, maxX));
+        y = Math.max(0, Math.min(y, maxY));
+
+        return island.getAreas()[x][y];
     }
 }

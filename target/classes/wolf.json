@@ -1,0 +1,6 @@
+{
+  "weight": 50,
+  "maxQuantity": 30,
+  "speed": 3,
+  "foodRequired": 8
+}
