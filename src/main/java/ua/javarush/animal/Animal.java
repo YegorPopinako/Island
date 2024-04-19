@@ -1,6 +1,5 @@
 package ua.javarush.animal;
 
-import lombok.EqualsAndHashCode;
 import ua.javarush.direction.Direction;
 import ua.javarush.island.Area;
 

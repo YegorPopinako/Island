@@ -22,12 +22,11 @@ public class TaskManager {
         this.executorService = executorService;
     }
 
-    public void performMovementTasks(Island island) {
+    public void performMovementTasks() {
         List<MoveTask> tasks = new ArrayList<>();
-        Map<Class<? extends Animal>, Set<Animal>> animalsCopy;
         for (Area[] row : island.getAreas()) {
             for (Area area : row) {
-                animalsCopy = new HashMap<>(area.getAnimals());
+                Map<Class<? extends Animal>, Set<Animal>> animalsCopy = new HashMap<>(area.getAnimals());
                 calculateDestination(island, area, animalsCopy, tasks);
             }
         }
@@ -44,7 +43,6 @@ public class TaskManager {
             }
         }
     }
-
 
     private Area findAdjacentArea(Island island, Area area, Animal animal) {
         Direction direction = animal.move();

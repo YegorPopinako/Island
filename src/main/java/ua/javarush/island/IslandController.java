@@ -28,7 +28,7 @@ public class IslandController {
 
     public void start() {
         for (int i = 0; i < island.getDays(); i++) {
-            taskManager.performMovementTasks(island);
+            taskManager.performMovementTasks();
             System.out.println(island);
             System.out.println("-".repeat(50));
         }
