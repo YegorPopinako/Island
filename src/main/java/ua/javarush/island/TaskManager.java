@@ -2,6 +2,7 @@ package ua.javarush.island;
 
 import ua.javarush.animal.Animal;
 import ua.javarush.direction.Direction;
+import ua.javarush.tasks.CleanTask;
 import ua.javarush.tasks.FeedTask;
 import ua.javarush.tasks.MoveTask;
 
@@ -26,11 +27,11 @@ public class TaskManager {
     }
 
     public void performEatTasks(Island island) {
-        Map<Class<? extends Animal>, Set<Animal>> animals;
+        Map<Class<? extends Animal>, Set<Animal>> animalsToFeed;
         for (Area[] row : island.getAreas()) {
             for (Area area : row) {
-                animals = new HashMap<>(area.getAnimals());
-                feedAnimals(area, animals);
+                animalsToFeed = new HashMap<>(area.getAnimals());
+                feedAnimals(area, animalsToFeed);
             }
         }
     }
@@ -39,6 +40,30 @@ public class TaskManager {
         for (var entry : animals.entrySet()) {
             for (Animal animal : entry.getValue()) {
                 FeedTask task = new FeedTask(area, animal);
+                Future<?> future = executorService.submit(task);
+                try {
+                    future.get();
+                } catch (InterruptedException | ExecutionException e) {
+                    e.getCause();
+                }
+            }
+        }
+    }
+
+    public void performCleanTasks(Island island) {
+        Map<Class<? extends Animal>, Set<Animal>> animalsToRemove;
+        for (Area[] row : island.getAreas()) {
+            for (Area area : row) {
+                animalsToRemove = new HashMap<>(area.getAnimals());
+                removeAnimals(area, animalsToRemove);
+            }
+        }
+    }
+
+    private void removeAnimals(Area area, Map<Class<? extends Animal>, Set<Animal>> animalsToRemove) {
+        for (var entry : animalsToRemove.entrySet()) {
+            for (Animal animal : entry.getValue()) {
+                CleanTask task = new CleanTask(area, animal);
                 Future<?> future = executorService.submit(task);
                 try {
                     future.get();

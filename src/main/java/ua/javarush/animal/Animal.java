@@ -43,7 +43,7 @@ public abstract class Animal {
 
     public abstract Animal reproduce();
 
-    public boolean isAlive(){
+    public boolean isAlive() {
         return healthPoints > 0;
     }
 }

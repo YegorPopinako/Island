@@ -19,11 +19,13 @@ public class Wolf extends Herbivorous {
     @Override
     public void eat(Area area) {
         Map<Class<? extends Animal>, Set<Animal>> animals = area.getAnimals();
-        for(var pray : animals.entrySet()) {
-            if(pray instanceof Duck){
-                int chanceToEat =ThreadLocalRandom.current().nextInt(0, 100);
-                if(chanceToEat < 30){
-                    ((Duck) pray).setHealthPoints(0);
+        for (Set<Animal> animalSet : animals.values()) {
+            for (Animal animal : animalSet) {
+                if (animal instanceof Duck duck && duck.isAlive()) {
+                    int chanceToEat = ThreadLocalRandom.current().nextInt(0, 100);
+                    if (chanceToEat < 1) {
+                        duck.setHealthPoints(0);
+                    }
                 }
             }
         }
