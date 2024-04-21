@@ -16,6 +16,6 @@ public class FeedTask implements Runnable {
 
     @Override
     public void run() {
-
+        animal.eat(area);
     }
 }

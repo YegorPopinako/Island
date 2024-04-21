@@ -1,16 +1,26 @@
 package ua.javarush.animal;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import ua.javarush.direction.Direction;
 import ua.javarush.island.Area;
 
-import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public abstract class Animal {
 
+    @EqualsAndHashCode.Include
     private final int id;
-    private final int healthPoints;
+
+    @Getter
+    @Setter
+    private int healthPoints;
+
+    @Setter
+    private boolean hasMoved;
     Direction[] directions = Direction.values();
 
     protected Animal() {
@@ -19,8 +29,14 @@ public abstract class Animal {
     }
 
     public Direction move() {
-        ThreadLocalRandom random = ThreadLocalRandom.current();
-        return directions[random.nextInt(0, directions.length)];
+        if (!hasMoved) {
+            ThreadLocalRandom random = ThreadLocalRandom.current();
+            Direction direction = directions[random.nextInt(0, directions.length)];
+            hasMoved = true;
+            return direction;
+        } else {
+            return Direction.NONE;
+        }
     }
 
     public abstract void eat(Area area);
@@ -29,18 +45,5 @@ public abstract class Animal {
 
     public boolean isAlive(){
         return healthPoints > 0;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Animal animal = (Animal) o;
-        return id == animal.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
     }
 }

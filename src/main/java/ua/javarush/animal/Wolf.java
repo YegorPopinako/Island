@@ -6,6 +6,11 @@ import ua.javarush.animal.settings.Settings;
 import ua.javarush.animal.settings.utils.AnimalSettingsUtil;
 import ua.javarush.island.Area;
 
+import java.awt.image.ImageProducer;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
+
 @Settings(settingsFile = "wolf.json")
 public class Wolf extends Herbivorous {
 
@@ -13,7 +18,15 @@ public class Wolf extends Herbivorous {
 
     @Override
     public void eat(Area area) {
-
+        Map<Class<? extends Animal>, Set<Animal>> animals = area.getAnimals();
+        for(var pray : animals.entrySet()) {
+            if(pray instanceof Duck){
+                int chanceToEat =ThreadLocalRandom.current().nextInt(0, 100);
+                if(chanceToEat < 30){
+                    ((Duck) pray).setHealthPoints(0);
+                }
+            }
+        }
     }
 
     @Override

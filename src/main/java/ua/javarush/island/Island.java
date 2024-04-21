@@ -20,10 +20,10 @@ public class Island {
         areas = initIsland(sizeX, sizeY);
     }
 
-    private static Area[][] initIsland(int coordinateX, int coordinateY) {
-        Area[][] areas = new Area[coordinateX][coordinateY];
-        for (int i = 0; i < coordinateX; i++) {
-            for (int j = 0; j < coordinateY; j++) {
+    private static Area[][] initIsland(int sizeX, int sizeY) {
+        Area[][] areas = new Area[sizeX][sizeY];
+        for (int i = 0; i < sizeX; i++) {
+            for (int j = 0; j < sizeY; j++) {
                 areas[i][j] = Area.initArea(i, j);
             }
         }

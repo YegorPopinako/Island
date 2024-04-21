@@ -2,7 +2,6 @@ package ua.javarush.tasks;
 
 import ua.javarush.animal.Animal;
 import ua.javarush.island.Area;
-import ua.javarush.island.Island;
 
 import java.util.concurrent.locks.Lock;
 
@@ -13,15 +12,12 @@ public class MoveTask implements Runnable {
     private final Area to;
 
     private final Animal animal;
-    private final Island island;
 
-    public MoveTask(Island island, Area from, Area to, Animal animal) {
-        this.island = island;
+    public MoveTask(Area from, Area to, Animal animal) {
         this.from = from;
         this.to = to;
         this.animal = animal;
     }
-
 
     @Override
     public void run() {

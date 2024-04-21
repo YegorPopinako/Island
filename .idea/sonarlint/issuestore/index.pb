@@ -37,6 +37,3 @@ f
 6src/main/java/ua/javarush/island/IslandController.java,7\6\76e8682e1c7155a6dda344d0adc64ef64c39f3d7
 a
 1src/main/java/ua/javarush/island/TaskManager.java,d\d\dd7277b5f7ef014a7d68f43c8da5c68a17c4af90
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
