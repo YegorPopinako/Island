@@ -25,7 +25,7 @@ public class IslandController {
 
     public IslandController(Island island) {
         this.island = island;
-        this.executorService = Executors.newFixedThreadPool(3);
+        this.executorService = Executors.newFixedThreadPool(4);
         this.taskManager = new TaskManager(island, executorService);
     }
 
@@ -34,6 +34,7 @@ public class IslandController {
             taskManager.performMovementTasks(island);
             taskManager.performEatTasks(island);
             taskManager.performCleanTasks(island);
+            taskManager.performReproduceTasks(island);
             printResidencesAmount();
             System.out.println(island);
             System.out.println("-".repeat(50));

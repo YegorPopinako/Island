@@ -41,7 +41,7 @@ public abstract class Animal {
 
     public abstract void eat(Area area);
 
-    public abstract Animal reproduce();
+    public abstract void reproduce(Area area);
 
     public boolean isAlive() {
         return healthPoints > 0;

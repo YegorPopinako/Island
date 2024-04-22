@@ -1,17 +1,7 @@
 
-r	java:S106&"+Replace this use of System.out by a logger.(°öØÄþÿÿÿÿ8Å˜Ç€ð1J$5f06c726-9ab6-4a49-bbff-338e4143449c
-m	java:S106'"+Replace this use of System.out by a logger.(›”¦Û8Æ˜Ç€ð1J$5b006edb-74a0-46f7-872e-ca9b8a1a647a
+r	java:S106'"+Replace this use of System.out by a logger.(°öØÄþÿÿÿÿ8Å˜Ç€ð1J$22d17565-d194-444d-9d50-01d729a5ea6d
+m	java:S106("+Replace this use of System.out by a logger.(›”¦Û8Æ˜Ç€ð1J$9a5e838f-ac61-4548-a3f5-56b25a76df5c
 •
-java:S3776,"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ˆÝ’©8ï°Í€ð1J$fce54266-acfe-49b9-8aaa-07e2156e189f
-r	java:S106>"+Replace this use of System.out by a logger.(ŠÏëïùÿÿÿÿ8Û˜Ç€ð1J$53ed97d8-6236-4f5a-b390-4373f42a008f
-m	java:S106?"+Replace this use of System.out by a logger.(†­ðá8Ý˜Ç€ð1J$da961de2-ae18-4508-9714-0a007919d84b
-„
-java:S1128"<Remove this unused import 'ua.javarush.direction.Direction'.(Ìëù¥üÿÿÿÿ8ÈÀœ‚ð1J$75542ce1-140e-4010-a9ff-ff900d772498
-z
-java:S1128"7Remove this unused import 'ua.javarush.tasks.MoveTask'.(¨€ª8ÈÀœ‚ð1J$99868a97-3445-4b68-9ee4-8e29bc6c2d72
-s
-java:S1128	"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÈÀœ‚ð1J$6a8d9bb4-4801-4109-acd0-999afee99a11
-s
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÈÀœ‚ð1J$cd7aec32-9a2e-4ce7-9bf0-9f239e1fca3c
-€
-java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8ÈÀœ‚ð1J$64c6ab93-8d3a-4308-96cf-07ed8530e786
+java:S3776-"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ˆÝ’©8ï°Í€ð1J$b3141d8a-f4db-44a9-b0a2-1ff80d72a2a7
+r	java:S106?"+Replace this use of System.out by a logger.(ŠÏëïùÿÿÿÿ8Û˜Ç€ð1J$4203032e-367d-4ada-9a89-3b4126d24239
+m	java:S106@"+Replace this use of System.out by a logger.(†­ðá8Ý˜Ç€ð1J$eede85b4-71bd-41ef-ad1f-ed3b6dbc3801

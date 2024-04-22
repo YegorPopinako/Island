@@ -17,8 +17,8 @@ public class Duck extends Herbivorous {
     }
 
     @Override
-    public Animal reproduce() {
-        return null;
+    public void reproduce(Area area) {
+
     }
 
     public static AnimalUnit getAnimalUnit() {

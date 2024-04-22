@@ -5,6 +5,7 @@ import ua.javarush.direction.Direction;
 import ua.javarush.tasks.CleanTask;
 import ua.javarush.tasks.FeedTask;
 import ua.javarush.tasks.MoveTask;
+import ua.javarush.tasks.ReproduceTask;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,6 +25,30 @@ public class TaskManager {
     public TaskManager(Island island, ExecutorService executorService) {
         this.island = island;
         this.executorService = executorService;
+    }
+
+    public void performReproduceTasks(Island island) {
+        Map<Class<? extends Animal>, Set<Animal>> animalsToReproduce;
+        for (Area[] row : island.getAreas()) {
+            for (Area area : row) {
+                animalsToReproduce = new HashMap<>(area.getAnimals());
+                reproduceAnimals(area, animalsToReproduce);
+            }
+        }
+    }
+
+    private void reproduceAnimals(Area area, Map<Class<? extends Animal>, Set<Animal>> animals) {
+        for (var entry : animals.entrySet()) {
+            for (Animal animal : entry.getValue()) {
+                ReproduceTask task = new ReproduceTask(area, animal);
+                Future<?> future = executorService.submit(task);
+                try {
+                    future.get();
+                } catch (InterruptedException | ExecutionException e) {
+                    e.getCause();
+                }
+            }
+        }
     }
 
     public void performEatTasks(Island island) {

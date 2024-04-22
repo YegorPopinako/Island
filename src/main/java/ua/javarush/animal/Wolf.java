@@ -32,8 +32,19 @@ public class Wolf extends Herbivorous {
     }
 
     @Override
-    public Animal reproduce() {
-        return null;
+    public void reproduce(Area area) {
+        Map<Class<? extends Animal>, Set<Animal>> animals = area.getAnimals();
+        for (Set<Animal> animalSet : animals.values()) {
+            for (Animal animal : animalSet) {
+                if (animal instanceof Wolf && !area.isFull(Wolf.class)) {
+                    int chanceToReproduce = ThreadLocalRandom.current().nextInt(0, 100);
+                    if (chanceToReproduce < 1) {
+                        Animal bornAnimal = AnimalFactory.createAnimal(Wolf.class);
+                        area.addAnimal(bornAnimal);
+                    }
+                }
+            }
+        }
     }
 
     public static AnimalUnit getAnimalUnit() {
