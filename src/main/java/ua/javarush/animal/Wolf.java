@@ -23,7 +23,7 @@ public class Wolf extends Herbivorous {
             for (Animal animal : animalSet) {
                 if (animal instanceof Duck duck && duck.isAlive()) {
                     int chanceToEat = ThreadLocalRandom.current().nextInt(0, 100);
-                    if (chanceToEat < 1) {
+                    if (chanceToEat < 5) {
                         duck.setHealthPoints(0);
                     }
                 }

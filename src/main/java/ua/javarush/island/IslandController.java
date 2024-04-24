@@ -25,16 +25,13 @@ public class IslandController {
 
     public IslandController(Island island) {
         this.island = island;
-        this.executorService = Executors.newFixedThreadPool(4);
+        this.executorService = Executors.newScheduledThreadPool(4);
         this.taskManager = new TaskManager(island, executorService);
     }
 
     public void start() {
         for (int i = 0; i < island.getDays(); i++) {
-            taskManager.performMovementTasks(island);
-            taskManager.performEatTasks(island);
-            taskManager.performCleanTasks(island);
-            taskManager.performReproduceTasks(island);
+            taskManager.performTasks(island);
             printResidencesAmount();
             System.out.println(island);
             System.out.println("-".repeat(50));

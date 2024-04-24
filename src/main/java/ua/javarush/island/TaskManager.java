@@ -27,6 +27,13 @@ public class TaskManager {
         this.executorService = executorService;
     }
 
+    public void performTasks(Island island){
+        performMovementTasks(island);
+        performReproduceTasks(island);
+        performEatTasks(island);
+        performCleanTasks(island);
+    }
+
     public void performReproduceTasks(Island island) {
         Map<Class<? extends Animal>, Set<Animal>> animalsToReproduce;
         for (Area[] row : island.getAreas()) {
