@@ -1,4 +1,4 @@
-package ua.javarush.island;
+package ua.javarush.yegor.island;
 
 import lombok.Getter;
 

@@ -1,10 +1,12 @@
-package ua.javarush.animal;
+package ua.javarush.yegor.residences;
 
-import ua.javarush.animal.classification.Herbivorous;
-import ua.javarush.animal.settings.AnimalUnit;
-import ua.javarush.animal.settings.Settings;
-import ua.javarush.animal.settings.utils.AnimalSettingsUtil;
-import ua.javarush.island.Area;
+import ua.javarush.yegor.animal.Animal;
+import ua.javarush.yegor.animal.AnimalFactory;
+import ua.javarush.yegor.animal.classification.Herbivorous;
+import ua.javarush.yegor.animal.settings.AnimalUnit;
+import ua.javarush.yegor.animal.settings.Settings;
+import ua.javarush.yegor.animal.settings.utils.AnimalSettingsUtil;
+import ua.javarush.yegor.island.Area;
 
 import java.util.Map;
 import java.util.Set;

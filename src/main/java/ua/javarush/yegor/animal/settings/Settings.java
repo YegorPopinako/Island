@@ -1,4 +1,4 @@
-package ua.javarush.animal.settings;
+package ua.javarush.yegor.animal.settings;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

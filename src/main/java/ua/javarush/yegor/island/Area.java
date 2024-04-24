@@ -1,13 +1,15 @@
-package ua.javarush.island;
+package ua.javarush.yegor.island;
 
 import lombok.Getter;
-import ua.javarush.animal.Animal;
-import ua.javarush.animal.AnimalFactory;
-import ua.javarush.animal.Duck;
-import ua.javarush.animal.Wolf;
+import ua.javarush.yegor.animal.Animal;
+import ua.javarush.yegor.animal.AnimalFactory;
+import ua.javarush.yegor.residences.Plant;
+import ua.javarush.yegor.residences.Duck;
+import ua.javarush.yegor.residences.Wolf;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -18,11 +20,14 @@ import java.util.concurrent.locks.ReentrantLock;
 @Getter
 public class Area {
 
+    private final int MAX_PLANT_NUMBER = 10;
+
     private final int coordinateX;
     private final int coordinateY;
 
     private static final Map<Class<? extends Animal>, Integer> ANIMAL_MAX = new HashMap<>();
     private final Map<Class<? extends Animal>, Set<Animal>> animals = new HashMap<>();
+    private final Set<Plant> plants = new HashSet<>();
     private final Map<Class<? extends Animal>, Lock> classToLock = new HashMap<>();
     {
         classToLock.put(Duck.class, new ReentrantLock());
@@ -42,7 +47,15 @@ public class Area {
     public static Area initArea(int x, int y) {
         Area area = new Area(x, y);
         initAnimals(area);
+        initPlants(area);
         return area;
+    }
+
+    private static void initPlants(Area area) {
+        int number = ThreadLocalRandom.current().nextInt(1, area.MAX_PLANT_NUMBER + 1);
+        for(int i = 0; i < number; i++) {
+            area.plants.add(new Plant());
+        }
     }
 
     private static void initAnimals(Area area){
@@ -73,6 +86,14 @@ public class Area {
         return animals.getOrDefault(clazz, Collections.emptySet()).size() >= ANIMAL_MAX.get(clazz);
     }
 
+    public void addPlant(Plant plant) {
+        plants.add(plant);
+    }
+
+    public void removePlant(Plant plant) {
+        plants.remove(plant);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -81,8 +102,9 @@ public class Area {
             int count = entry.getValue().size();
             String animalType = clazz.getSimpleName();
             char animalCode = animalType.charAt(0);
-            sb.append(animalCode).append("=").append(count);
+            sb.append(animalCode).append("=").append(count).append(", ");
         }
+        sb.append("P=").append(plants.size());
         return sb.toString();
     }
 }

@@ -1,7 +1,7 @@
-package ua.javarush.tasks;
+package ua.javarush.yegor.tasks;
 
-import ua.javarush.animal.Animal;
-import ua.javarush.island.Area;
+import ua.javarush.yegor.animal.Animal;
+import ua.javarush.yegor.island.Area;
 
 public class CleanTask implements Runnable {
     private final Area area;

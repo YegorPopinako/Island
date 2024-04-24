@@ -1,4 +1,4 @@
-package ua.javarush.direction;
+package ua.javarush.yegor.direction;
 
 import lombok.Getter;
 

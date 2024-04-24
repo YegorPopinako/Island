@@ -1,10 +1,10 @@
-package ua.javarush.animal.settings.utils;
+package ua.javarush.yegor.animal.settings.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.NoArgsConstructor;
-import ua.javarush.animal.Animal;
-import ua.javarush.animal.settings.AnimalUnit;
-import ua.javarush.animal.settings.Settings;
+import ua.javarush.yegor.animal.Animal;
+import ua.javarush.yegor.animal.settings.AnimalUnit;
+import ua.javarush.yegor.animal.settings.Settings;
 
 import java.io.InputStream;
 

@@ -1,15 +1,13 @@
-package ua.javarush.island;
+package ua.javarush.yegor.island;
 
-import ua.javarush.animal.Animal;
-import ua.javarush.direction.Direction;
-import ua.javarush.tasks.CleanTask;
-import ua.javarush.tasks.FeedTask;
-import ua.javarush.tasks.MoveTask;
-import ua.javarush.tasks.ReproduceTask;
+import ua.javarush.yegor.animal.Animal;
+import ua.javarush.yegor.direction.Direction;
+import ua.javarush.yegor.tasks.CleanTask;
+import ua.javarush.yegor.tasks.FeedTask;
+import ua.javarush.yegor.tasks.MoveTask;
+import ua.javarush.yegor.tasks.ReproduceTask;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;

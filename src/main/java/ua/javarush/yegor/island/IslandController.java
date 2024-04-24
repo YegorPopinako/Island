@@ -1,19 +1,14 @@
-package ua.javarush.island;
+package ua.javarush.yegor.island;
 
-import ua.javarush.animal.Animal;
-import ua.javarush.animal.Duck;
-import ua.javarush.animal.Wolf;
-import ua.javarush.direction.Direction;
-import ua.javarush.tasks.MoveTask;
+import ua.javarush.yegor.animal.Animal;
+import ua.javarush.yegor.residences.Duck;
+import ua.javarush.yegor.residences.Wolf;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.stream.Collectors;
 
 public class IslandController {
 

@@ -1,10 +1,10 @@
-package ua.javarush.animal;
+package ua.javarush.yegor.animal;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import ua.javarush.direction.Direction;
-import ua.javarush.island.Area;
+import ua.javarush.yegor.direction.Direction;
+import ua.javarush.yegor.island.Area;
 
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;

@@ -1,4 +1,7 @@
-package ua.javarush.animal;
+package ua.javarush.yegor.animal;
+
+import ua.javarush.yegor.residences.Duck;
+import ua.javarush.yegor.residences.Wolf;
 
 import java.util.HashMap;
 import java.util.Map;
