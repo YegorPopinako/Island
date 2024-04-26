@@ -2,12 +2,15 @@ package ua.javarush.yegor.island;
 
 import ua.javarush.yegor.animal.Animal;
 import ua.javarush.yegor.direction.Direction;
+import ua.javarush.yegor.residences.Plant;
 import ua.javarush.yegor.tasks.CleanTask;
 import ua.javarush.yegor.tasks.FeedTask;
 import ua.javarush.yegor.tasks.MoveTask;
+import ua.javarush.yegor.tasks.ReproducePlantTask;
 import ua.javarush.yegor.tasks.ReproduceTask;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
@@ -28,8 +31,31 @@ public class TaskManager {
     public void performTasks(Island island){
         performMovementTasks(island);
         performReproduceTasks(island);
+        performPlantReproduceTasks(island);
         performEatTasks(island);
         performCleanTasks(island);
+    }
+
+    private void performPlantReproduceTasks(Island island) {
+        Set<Plant> plantsToReproduce;
+        for (Area[] row : island.getAreas()) {
+            for (Area area : row) {
+                plantsToReproduce = new HashSet<>(area.getPlants());
+                reproducePlants(area, plantsToReproduce);
+            }
+        }
+    }
+
+    private void reproducePlants(Area area, Set<Plant> plantsToReproduce) {
+        for (Plant plant : plantsToReproduce) {
+            ReproducePlantTask task = new ReproducePlantTask(area, plant);
+            Future<?> future = executorService.submit(task);
+            try {
+                future.get();
+            } catch (InterruptedException | ExecutionException e) {
+                e.getCause();
+            }
+        }
     }
 
     public void performReproduceTasks(Island island) {

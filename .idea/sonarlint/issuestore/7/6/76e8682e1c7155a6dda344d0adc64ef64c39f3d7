@@ -1,7 +1,0 @@
-
-r	java:S106"+Replace this use of System.out by a logger.(°öØÄþÿÿÿÿ8Å˜Ç€ð1J$5048bc17-7080-41b8-b4cd-e8b1d7364a83
-m	java:S106 "+Replace this use of System.out by a logger.(›”¦Û8Æ˜Ç€ð1J$98e5b79d-f06f-458b-a7de-1da32ce3f44c
-•
-java:S3776%"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ˆÝ’©8ï°Í€ð1J$61ce95ac-2e82-41e2-ab84-1f796ea39ae9
-r	java:S1067"+Replace this use of System.out by a logger.(ŠÏëïùÿÿÿÿ8Û˜Ç€ð1J$89408319-cb60-4c9e-9be1-8ade4f3ac855
-m	java:S1068"+Replace this use of System.out by a logger.(†­ðá8Ý˜Ç€ð1J$a23db79f-ab8e-45e4-b5ec-a847cfcc5aa4
