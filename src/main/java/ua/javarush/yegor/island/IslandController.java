@@ -40,16 +40,12 @@ public class IslandController {
 
     private void printResidencesAmount() {
         Map<Class<? extends Animal>, Set<Animal>> animalsCopy;
-        Set<Plant> plantsCopy;
         int wolvesAmount = 0;
         int ducksAmount = 0;
         int plantsAmount = 0;
         for (Area[] row : island.getAreas()) {
             for (Area area : row) {
-               plantsCopy = new HashSet<>(area.getPlants());
-               for (Plant plant : plantsCopy) {
-                   plantsAmount++;
-               }
+               plantsAmount += area.getPlants().size();
                animalsCopy = new HashMap<>(area.getAnimals());
                for (var entry : animalsCopy.entrySet()) {
                    for (Animal animal : entry.getValue()) {
