@@ -8,12 +8,14 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Herbivorous extends Animal {
+
     public void eat(Area area){
         Set<Plant> plants = area.getPlants();
         for (Plant plant : plants) {
             int chanceToEat = ThreadLocalRandom.current().nextInt(0, 400);
             if (chanceToEat < 1) {
                 area.removePlant(plant);
+                this.healthPoints += 20;
                 break;
             }
         }

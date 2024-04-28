@@ -18,6 +18,8 @@ public abstract class Predator extends Animal {
                     int chanceToEat = ThreadLocalRandom.current().nextInt(0, 100);
                     if (chanceToEat < 5) {
                         duck.setHealthPoints(0);
+                        this.healthPoints += 20;
+                        break;
                     }
                 }
             }

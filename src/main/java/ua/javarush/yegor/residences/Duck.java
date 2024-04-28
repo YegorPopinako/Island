@@ -37,4 +37,9 @@ public class Duck extends Herbivorous {
     public static AnimalUnit getAnimalUnit() {
         return ANIMAL_UNIT;
     }
+
+    @Override
+    public int getNumberOfMovements() {
+        return Wolf.getAnimalUnit().speed();
+    }
 }

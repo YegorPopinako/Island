@@ -36,4 +36,9 @@ public class Wolf extends Predator {
     public static AnimalUnit getAnimalUnit() {
         return ANIMAL_UNIT;
     }
+
+    @Override
+    public int getNumberOfMovements() {
+        return Wolf.getAnimalUnit().speed();
+    }
 }

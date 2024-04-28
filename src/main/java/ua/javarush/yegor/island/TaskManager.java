@@ -144,14 +144,20 @@ public class TaskManager {
     private void calculateDestination(Area area, Map<Class<? extends Animal>, Set<Animal>> animalsCopy) {
         for (var entry : animalsCopy.entrySet()) {
             for (Animal animal : entry.getValue()) {
-                Area destination = findAdjacentArea(area, animal);
-                MoveTask task = new MoveTask(area, destination, animal);
-                Future<?> future = executorService.submit(task);
-                try {
-                    future.get();
-                } catch (InterruptedException | ExecutionException e) {
-                    e.getCause();
-                }
+                quantityOfMovements(area, animal);
+            }
+        }
+    }
+
+    private void quantityOfMovements(Area area, Animal animal) {
+        for (int i = 0; i < animal.getNumberOfMovements(); i++) {
+            Area destination = findAdjacentArea(area, animal);
+            MoveTask task = new MoveTask(area, destination, animal);
+            Future<?> future = executorService.submit(task);
+            try {
+                future.get();
+            } catch (InterruptedException | ExecutionException e) {
+                e.getCause();
             }
         }
     }

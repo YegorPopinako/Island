@@ -46,3 +46,9 @@ S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+c
+3src/main/java/ua/javarush/yegor/tasks/MoveTask.java,0\9\094d2271dc824feea728f8f96dd385087636346a
+d
+4src/main/java/ua/javarush/yegor/animal/Moveable.java,5\b\5bf53d028315b143da56c9f26d16fc3095a3a5b1
+c
+3src/main/java/ua/javarush/yegor/animal/Movable.java,c\d\cd1448407ada430e3c2fd7ac0d9d33d7fc01c8da

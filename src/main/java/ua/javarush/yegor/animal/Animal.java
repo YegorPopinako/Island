@@ -10,14 +10,14 @@ import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public abstract class Animal {
+public abstract class Animal implements Movable {
 
     @EqualsAndHashCode.Include
     private final int id;
 
     @Getter
     @Setter
-    private int healthPoints;
+    protected int healthPoints;
 
     @Setter
     private boolean hasMoved;
@@ -29,6 +29,7 @@ public abstract class Animal {
     }
 
     public Direction move() {
+        this.healthPoints -= 20;
         if (!hasMoved) {
             ThreadLocalRandom random = ThreadLocalRandom.current();
             Direction direction = directions[random.nextInt(0, directions.length)];
