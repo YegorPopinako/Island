@@ -30,8 +30,8 @@ public class TaskManager {
 
     public void performTasks(Island island){
         performMovementTasks(island);
-        performReproduceTasks(island);
         performPlantReproduceTasks(island);
+        performReproduceTasks(island);
         performEatTasks(island);
         performCleanTasks(island);
     }

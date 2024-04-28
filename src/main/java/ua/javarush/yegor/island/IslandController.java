@@ -25,6 +25,8 @@ public class IslandController {
     }
 
     public void start() {
+        printResidencesAmount();
+        System.out.println(island);
         for (int i = 0; i < island.getDays(); i++) {
             taskManager.performTasks(island);
             printResidencesAmount();

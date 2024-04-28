@@ -17,10 +17,6 @@ public class Duck extends Herbivorous {
 
     private static final AnimalUnit ANIMAL_UNIT = AnimalSettingsUtil.getAnimalUnit(Duck.class);
 
-    @Override
-    public void eat(Area area) {
-
-    }
 
     @Override
     public void reproduce(Area area) {
