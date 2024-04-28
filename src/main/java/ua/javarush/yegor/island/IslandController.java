@@ -2,9 +2,11 @@ package ua.javarush.yegor.island;
 
 import ua.javarush.yegor.animal.Animal;
 import ua.javarush.yegor.residences.Duck;
+import ua.javarush.yegor.residences.Plant;
 import ua.javarush.yegor.residences.Wolf;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
@@ -38,10 +40,16 @@ public class IslandController {
 
     private void printResidencesAmount() {
         Map<Class<? extends Animal>, Set<Animal>> animalsCopy;
+        Set<Plant> plantsCopy;
         int wolvesAmount = 0;
         int ducksAmount = 0;
+        int plantsAmount = 0;
         for (Area[] row : island.getAreas()) {
             for (Area area : row) {
+               plantsCopy = new HashSet<>(area.getPlants());
+               for (Plant plant : plantsCopy) {
+                   plantsAmount++;
+               }
                animalsCopy = new HashMap<>(area.getAnimals());
                for (var entry : animalsCopy.entrySet()) {
                    for (Animal animal : entry.getValue()) {
@@ -54,6 +62,8 @@ public class IslandController {
                }
             }
         }
+
+        System.out.println("Plants amount: " + plantsAmount);
         System.out.println("Wolves amount: " + wolvesAmount);
         System.out.println("Ducks amount: " + ducksAmount);
     }
