@@ -19,11 +19,7 @@ public class Plant {
     public void reproduce(Area area) {
         Set<Plant> plants = area.getPlants();
         if(plants.size() < area.getMAX_PLANT_NUMBER()) {
-            int chanceToReproduce = ThreadLocalRandom.current().nextInt(0, 100);
-            if (chanceToReproduce < 1) {
-                Plant bornPlant = new Plant();
-                area.addPlant(bornPlant);
-            }
+            area.addPlant(new Plant());
         }
     }
 }
