@@ -1,6 +1,7 @@
 package ua.javarush.yegor.island;
 
 import ua.javarush.yegor.animal.Animal;
+import ua.javarush.yegor.residences.Boa;
 import ua.javarush.yegor.residences.Duck;
 import ua.javarush.yegor.residences.Plant;
 import ua.javarush.yegor.residences.Wolf;
@@ -43,6 +44,7 @@ public class IslandController {
         int wolvesAmount = 0;
         int ducksAmount = 0;
         int plantsAmount = 0;
+        int boaAmount = 0;
         for (Area[] row : island.getAreas()) {
             for (Area area : row) {
                plantsAmount += area.getPlants().size();
@@ -53,6 +55,8 @@ public class IslandController {
                            wolvesAmount++;
                        } else if (animal.getClass().equals(Duck.class)) {
                            ducksAmount++;
+                       } else if (animal.getClass().equals(Boa.class)) {
+                           boaAmount++;
                        }
                    }
                }
@@ -62,5 +66,6 @@ public class IslandController {
         System.out.println("Plants amount: " + plantsAmount);
         System.out.println("Wolves amount: " + wolvesAmount);
         System.out.println("Ducks amount: " + ducksAmount);
+        System.out.println("Boa amount: " + boaAmount);
     }
 }

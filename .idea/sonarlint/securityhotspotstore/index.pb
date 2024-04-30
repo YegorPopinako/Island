@@ -42,3 +42,9 @@ c
 3src/main/java/ua/javarush/yegor/tasks/MoveTask.java,0\9\094d2271dc824feea728f8f96dd385087636346a
 c
 3src/main/java/ua/javarush/yegor/animal/Movable.java,c\d\cd1448407ada430e3c2fd7ac0d9d33d7fc01c8da
+c
+3src/main/java/ua/javarush/yegor/residences/Boa.java,2\8\286b1b24ce0ea2dab1149dc3b6845888ee873965
+o
+?src/main/java/ua/javarush/yegor/animal/settings/AnimalUnit.java,9\4\94c4a13ec15798efab5cf76af6c4ca1a29bfebd9
+b
+2src/main/java/ua/javarush/yegor/island/Island.java,f\b\fb62d9ce01ea333a7e9a5f93393f626fd04fec41

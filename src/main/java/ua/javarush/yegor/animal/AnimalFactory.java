@@ -1,5 +1,6 @@
 package ua.javarush.yegor.animal;
 
+import ua.javarush.yegor.residences.Boa;
 import ua.javarush.yegor.residences.Duck;
 import ua.javarush.yegor.residences.Wolf;
 
@@ -21,6 +22,7 @@ public final class AnimalFactory {
     static {
         CLASS_TO_INSTANCE_SUPPLIER.put(Duck.class, Duck::new);
         CLASS_TO_INSTANCE_SUPPLIER.put(Wolf.class, Wolf::new);
+        CLASS_TO_INSTANCE_SUPPLIER.put(Boa.class, Boa::new);
     }
 
     public static Animal createAnimal(Class<? extends Animal> clazz) {
