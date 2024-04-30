@@ -16,9 +16,9 @@ public abstract class Predator extends Animal {
             for (Animal animal : animalSet) {
                 if (animal instanceof Duck duck && duck.isAlive()) {
                     int chanceToEat = ThreadLocalRandom.current().nextInt(0, 100);
-                    if (chanceToEat < 5) {
+                    if (chanceToEat < 40) {
                         duck.setHealthPoints(0);
-                        this.healthPoints += 20;
+                        this.setHealthPoints(100);
                         break;
                     }
                 }

@@ -30,14 +30,6 @@ s
 Csrc/main/java/ua/javarush/yegor/animal/classification/Predator.java,5\5\555b45fe64809fe8085a9edbffd015d3a9ded5aa
 i
 9src/main/java/ua/javarush/yegor/animal/AnimalFactory.java,3\9\392faaf1e37b8a5c4203284493e45d9b59f345c8
-m
-=src/main/java/ua/javarush/yegor/recidences/AnimalFactory.java,3\a\3ae1fe8b8055afa74c1c36d0bc2859bf70d329e2
-w
-Gsrc/main/java/ua/javarush/yegor/recidences/classification/Predator.java,8\2\8206a4334b32278ff62508d1a79facb2aa15845d
-h
-8src/main/java/ua/javarush/yegor/recidences/Resident.java,e\b\eb32a256b4a94299f7472772b2d83aeeaf9bdfad
-f
-6src/main/java/ua/javarush/yegor/recidences/Animal.java,2\9\292a8d7f50bce7e588aaed33ec0f22416a9d980d
 c
 3src/main/java/ua/javarush/yegor/tasks/FeedTask.java,4\4\44c4dd1abe4251524c6f332bb98e8633f0915642
 v
@@ -48,7 +40,5 @@ S
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 c
 3src/main/java/ua/javarush/yegor/tasks/MoveTask.java,0\9\094d2271dc824feea728f8f96dd385087636346a
-d
-4src/main/java/ua/javarush/yegor/animal/Moveable.java,5\b\5bf53d028315b143da56c9f26d16fc3095a3a5b1
 c
 3src/main/java/ua/javarush/yegor/animal/Movable.java,c\d\cd1448407ada430e3c2fd7ac0d9d33d7fc01c8da

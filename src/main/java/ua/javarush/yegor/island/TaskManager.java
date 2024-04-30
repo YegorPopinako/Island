@@ -71,12 +71,14 @@ public class TaskManager {
     private void reproduceAnimals(Area area, Map<Class<? extends Animal>, Set<Animal>> animals) {
         for (var entry : animals.entrySet()) {
             for (Animal animal : entry.getValue()) {
-                ReproduceTask task = new ReproduceTask(area, animal);
-                Future<?> future = executorService.submit(task);
-                try {
-                    future.get();
-                } catch (InterruptedException | ExecutionException e) {
-                    e.getCause();
+                if(animal.isAlive()){
+                    ReproduceTask task = new ReproduceTask(area, animal);
+                    Future<?> future = executorService.submit(task);
+                    try {
+                        future.get();
+                    } catch (InterruptedException | ExecutionException e) {
+                        e.getCause();
+                    }
                 }
             }
         }

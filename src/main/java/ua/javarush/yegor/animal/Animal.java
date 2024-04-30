@@ -21,6 +21,7 @@ public abstract class Animal implements Movable {
 
     @Setter
     private boolean hasMoved;
+
     Direction[] directions = Direction.values();
 
     protected Animal() {
@@ -46,5 +47,9 @@ public abstract class Animal implements Movable {
 
     public boolean isAlive() {
         return healthPoints > 0;
+    }
+
+    public void decreaseHealthPoints(int healthPoints) {
+        this.healthPoints -= healthPoints;
     }
 }
