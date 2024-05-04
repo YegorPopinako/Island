@@ -5,10 +5,11 @@ import ua.javarush.yegor.animal.Animal;
 import ua.javarush.yegor.animal.AnimalFactory;
 import ua.javarush.yegor.residences.Bear;
 import ua.javarush.yegor.residences.Boa;
+import ua.javarush.yegor.residences.Deer;
 import ua.javarush.yegor.residences.Fox;
 import ua.javarush.yegor.residences.Horse;
 import ua.javarush.yegor.residences.Plant;
-import ua.javarush.yegor.residences.Duck;
+import ua.javarush.yegor.residences.Mouse;
 import ua.javarush.yegor.residences.Wolf;
 import ua.javarush.yegor.residences.Eagle;
 
@@ -35,13 +36,14 @@ public class Area {
     private final Set<Plant> plants = new HashSet<>();
     private final Map<Class<? extends Animal>, Lock> classToLock = new HashMap<>();
     {
-        classToLock.put(Duck.class, new ReentrantLock());
+        classToLock.put(Mouse.class, new ReentrantLock());
         classToLock.put(Wolf.class, new ReentrantLock());
         classToLock.put(Boa.class, new ReentrantLock());
         classToLock.put(Fox.class, new ReentrantLock());
         classToLock.put(Bear.class, new ReentrantLock());
         classToLock.put(Eagle.class, new ReentrantLock());
         classToLock.put(Horse.class, new ReentrantLock());
+        classToLock.put(Deer.class, new ReentrantLock());
     }
 
     private Area(int coordinateX, int coordinateY) {
@@ -50,13 +52,14 @@ public class Area {
     }
 
     static {
-        ANIMAL_MAX.put(Duck.class, Duck.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Mouse.class, Mouse.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Wolf.class, Wolf.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Boa.class, Boa.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Fox.class, Fox.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Bear.class, Bear.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Eagle.class, Eagle.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Horse.class, Horse.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Deer.class, Deer.getAnimalUnit().maxQuantity());
     }
 
     public static Area initArea(int x, int y) {

@@ -1,3 +1,4 @@
+// Boar.java
 package ua.javarush.yegor.residences;
 
 import ua.javarush.yegor.animal.Animal;
@@ -12,20 +13,20 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
-@Settings(settingsFile = "bear.json")
-public class Bear extends Predator {
+@Settings(settingsFile = "boar.json")
+public class Boar extends Predator {
 
-    private static final AnimalUnit ANIMAL_UNIT = AnimalSettingsUtil.getAnimalUnit(Bear.class);
+    private static final AnimalUnit ANIMAL_UNIT = AnimalSettingsUtil.getAnimalUnit(Boar.class);
 
     @Override
     public void eat(Area area) {
         Map<Class<? extends Animal>, Set<Animal>> animals = area.getAnimals();
         for (Set<Animal> animalSet : animals.values()) {
             for (Animal animal : animalSet) {
-                if (animal instanceof Mouse duck && duck.isAlive()) {
+                if (animal instanceof Mouse mouse && mouse.isAlive()) {
                     int chanceToEat = ThreadLocalRandom.current().nextInt(0, 100);
                     if (chanceToEat < 10) {
-                        duck.setHealthPoints(0);
+                        mouse.setHealthPoints(0);
                         this.setHealthPoints(100);
                         break;
                     }
@@ -39,10 +40,10 @@ public class Bear extends Predator {
         Map<Class<? extends Animal>, Set<Animal>> animals = area.getAnimals();
         for (Set<Animal> animalSet : animals.values()) {
             for (Animal animal : animalSet) {
-                if (animal instanceof Bear && !area.isFull(Bear.class)) {
+                if (animal instanceof Boar && !area.isFull(Boar.class)) {
                     int chanceToReproduce = ThreadLocalRandom.current().nextInt(0, 100);
-                    if (chanceToReproduce < 1) {
-                        Animal bornAnimal = AnimalFactory.createAnimal(Bear.class);
+                    if (chanceToReproduce < 10) {
+                        Animal bornAnimal = AnimalFactory.createAnimal(Boar.class);
                         area.addAnimal(bornAnimal);
                     }
                 }
@@ -56,6 +57,6 @@ public class Bear extends Predator {
 
     @Override
     public int getNumberOfMovements() {
-        return Bear.getAnimalUnit().speed();
+        return Boar.getAnimalUnit().speed();
     }
 }

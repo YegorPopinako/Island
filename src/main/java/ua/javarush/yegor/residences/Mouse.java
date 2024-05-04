@@ -12,10 +12,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
-@Settings(settingsFile = "horse.json")
-public class Horse extends Herbivorous {
+@Settings(settingsFile = "duck.json")
+public class Mouse extends Herbivorous {
 
-    private static final AnimalUnit ANIMAL_UNIT = AnimalSettingsUtil.getAnimalUnit(Horse.class);
+    private static final AnimalUnit ANIMAL_UNIT = AnimalSettingsUtil.getAnimalUnit(Mouse.class);
 
 
     @Override
@@ -23,10 +23,10 @@ public class Horse extends Herbivorous {
         Map<Class<? extends Animal>, Set<Animal>> animals = area.getAnimals();
         for (Set<Animal> animalSet : animals.values()) {
             for (Animal animal : animalSet) {
-                if (animal instanceof Horse && !area.isFull(Horse.class)) {
+                if (animal instanceof Mouse && !area.isFull(Mouse.class)) {
                     int chanceToReproduce = ThreadLocalRandom.current().nextInt(0, 100);
-                    if (chanceToReproduce < 15) {
-                        Animal bornAnimal = AnimalFactory.createAnimal(Horse.class);
+                    if (chanceToReproduce < 5) {
+                        Animal bornAnimal = AnimalFactory.createAnimal(Mouse.class);
                         area.addAnimal(bornAnimal);
                     }
                 }
@@ -40,6 +40,6 @@ public class Horse extends Herbivorous {
 
     @Override
     public int getNumberOfMovements() {
-        return Horse.getAnimalUnit().speed();
+        return Mouse.getAnimalUnit().speed();
     }
 }

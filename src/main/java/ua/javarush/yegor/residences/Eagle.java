@@ -22,7 +22,7 @@ public class Eagle extends Predator {
         Map<Class<? extends Animal>, Set<Animal>> animals = area.getAnimals();
         for (Set<Animal> animalSet : animals.values()) {
             for (Animal animal : animalSet) {
-                if (animal instanceof Duck duck && duck.isAlive()) {
+                if (animal instanceof Mouse duck && duck.isAlive()) {
                     int chanceToEat = ThreadLocalRandom.current().nextInt(0, 100);
                     if (chanceToEat < 80) {
                         duck.setHealthPoints(0);
