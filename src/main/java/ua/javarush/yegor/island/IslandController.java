@@ -43,44 +43,29 @@ public class IslandController {
     }
 
     private void printResidencesAmount() {
-        Map<Class<? extends Animal>, Set<Animal>> animalsCopy;
-        int wolvesAmount = 0;
-        int ducksAmount = 0;
+        Map<Class<? extends Animal>, Integer> animalCounts = new HashMap<>();
         int plantsAmount = 0;
-        int boaAmount = 0;
-        int foxAmount = 0;
-        int bearAmount = 0;
-        int eagleAmount = 0;
+
         for (Area[] row : island.getAreas()) {
             for (Area area : row) {
-               plantsAmount += area.getPlants().size();
-               animalsCopy = new HashMap<>(area.getAnimals());
-               for (var entry : animalsCopy.entrySet()) {
-                   for (Animal animal : entry.getValue()) {
-                       if (animal.getClass().equals(Wolf.class)) {
-                           wolvesAmount++;
-                       } else if (animal.getClass().equals(Duck.class)) {
-                           ducksAmount++;
-                       } else if (animal.getClass().equals(Boa.class)) {
-                           boaAmount++;
-                       } else if (animal.getClass().equals(Fox.class)) {
-                           foxAmount++;
-                       } else if (animal.getClass().equals(Bear.class)) {
-                           bearAmount++;
-                       } else if (animal.getClass().equals(Eagle.class)) {
-                           eagleAmount++;
-                       }
-                   }
-               }
+                plantsAmount += area.getPlants().size();
+                animalsCount(area, animalCounts);
             }
         }
 
+        for (Map.Entry<Class<? extends Animal>, Integer> entry : animalCounts.entrySet()) {
+            Class<? extends Animal> animalClass = entry.getKey();
+            int count = entry.getValue();
+            System.out.println(animalClass.getSimpleName() + " count: " + count);
+        }
         System.out.println("Plants amount: " + plantsAmount);
-        System.out.println("Wolves amount: " + wolvesAmount);
-        System.out.println("Ducks amount: " + ducksAmount);
-        System.out.println("Boa amount: " + boaAmount);
-        System.out.println("Fox amount: " + foxAmount);
-        System.out.println("Bear amount: " + bearAmount);
-        System.out.println("Eagle amount: " + eagleAmount);
+    }
+
+    private static void animalsCount(Area area, Map<Class<? extends Animal>, Integer> animalCounts) {
+        Map<Class<? extends Animal>, Set<Animal>> animalsCopy = area.getAnimals();
+        for (var entry : animalsCopy.entrySet()) {
+            Class<? extends Animal> animalClass = entry.getKey();
+            animalCounts.put(animalClass, animalCounts.getOrDefault(animalClass, 0) + entry.getValue().size());
+        }
     }
 }
