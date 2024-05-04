@@ -3,15 +3,7 @@ package ua.javarush.yegor.island;
 import lombok.Getter;
 import ua.javarush.yegor.animal.Animal;
 import ua.javarush.yegor.animal.AnimalFactory;
-import ua.javarush.yegor.residences.Bear;
-import ua.javarush.yegor.residences.Boa;
-import ua.javarush.yegor.residences.Deer;
-import ua.javarush.yegor.residences.Fox;
-import ua.javarush.yegor.residences.Horse;
-import ua.javarush.yegor.residences.Plant;
-import ua.javarush.yegor.residences.Mouse;
-import ua.javarush.yegor.residences.Wolf;
-import ua.javarush.yegor.residences.Eagle;
+import ua.javarush.yegor.residences.*;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -44,6 +36,13 @@ public class Area {
         classToLock.put(Eagle.class, new ReentrantLock());
         classToLock.put(Horse.class, new ReentrantLock());
         classToLock.put(Deer.class, new ReentrantLock());
+        classToLock.put(Rabbit.class, new ReentrantLock());
+        classToLock.put(Goat.class, new ReentrantLock());
+        classToLock.put(Sheep.class, new ReentrantLock());
+        classToLock.put(Duck.class, new ReentrantLock());
+        classToLock.put(Buffalo.class, new ReentrantLock());
+        classToLock.put(Boar.class, new ReentrantLock());
+        classToLock.put(Caterpillar.class, new ReentrantLock());
     }
 
     private Area(int coordinateX, int coordinateY) {
@@ -60,6 +59,13 @@ public class Area {
         ANIMAL_MAX.put(Eagle.class, Eagle.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Horse.class, Horse.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Deer.class, Deer.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Rabbit.class, Rabbit.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Goat.class, Goat.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Sheep.class, Sheep.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Duck.class, Duck.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Buffalo.class, Buffalo.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Boar.class, Boar.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Caterpillar.class, Caterpillar.getAnimalUnit().maxQuantity());
     }
 
     public static Area initArea(int x, int y) {

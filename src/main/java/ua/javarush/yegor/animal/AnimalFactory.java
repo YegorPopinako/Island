@@ -1,13 +1,6 @@
 package ua.javarush.yegor.animal;
 
-import ua.javarush.yegor.residences.Bear;
-import ua.javarush.yegor.residences.Boa;
-import ua.javarush.yegor.residences.Deer;
-import ua.javarush.yegor.residences.Mouse;
-import ua.javarush.yegor.residences.Fox;
-import ua.javarush.yegor.residences.Horse;
-import ua.javarush.yegor.residences.Wolf;
-import ua.javarush.yegor.residences.Eagle;
+import ua.javarush.yegor.residences.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,6 +26,13 @@ public final class AnimalFactory {
         CLASS_TO_INSTANCE_SUPPLIER.put(Eagle.class, Eagle::new);
         CLASS_TO_INSTANCE_SUPPLIER.put(Horse.class, Horse::new);
         CLASS_TO_INSTANCE_SUPPLIER.put(Deer.class, Deer::new);
+        CLASS_TO_INSTANCE_SUPPLIER.put(Rabbit.class, Rabbit::new);
+        CLASS_TO_INSTANCE_SUPPLIER.put(Goat.class, Goat::new);
+        CLASS_TO_INSTANCE_SUPPLIER.put(Sheep.class, Sheep::new);
+        CLASS_TO_INSTANCE_SUPPLIER.put(Duck.class, Duck::new);
+        CLASS_TO_INSTANCE_SUPPLIER.put(Buffalo.class, Buffalo::new);
+        CLASS_TO_INSTANCE_SUPPLIER.put(Boar.class, Boar::new);
+        CLASS_TO_INSTANCE_SUPPLIER.put(Caterpillar.class, Caterpillar::new);
     }
 
     public static Animal createAnimal(Class<? extends Animal> clazz) {
