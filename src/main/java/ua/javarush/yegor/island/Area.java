@@ -3,7 +3,9 @@ package ua.javarush.yegor.island;
 import lombok.Getter;
 import ua.javarush.yegor.animal.Animal;
 import ua.javarush.yegor.animal.AnimalFactory;
+import ua.javarush.yegor.residences.Bear;
 import ua.javarush.yegor.residences.Boa;
+import ua.javarush.yegor.residences.Fox;
 import ua.javarush.yegor.residences.Plant;
 import ua.javarush.yegor.residences.Duck;
 import ua.javarush.yegor.residences.Wolf;
@@ -34,6 +36,8 @@ public class Area {
         classToLock.put(Duck.class, new ReentrantLock());
         classToLock.put(Wolf.class, new ReentrantLock());
         classToLock.put(Boa.class, new ReentrantLock());
+        classToLock.put(Fox.class, new ReentrantLock());
+        classToLock.put(Bear.class, new ReentrantLock());
     }
 
     private Area(int coordinateX, int coordinateY) {
@@ -45,6 +49,8 @@ public class Area {
         ANIMAL_MAX.put(Duck.class, Duck.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Wolf.class, Wolf.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Boa.class, Boa.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Fox.class, Fox.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Bear.class, Bear.getAnimalUnit().maxQuantity());
     }
 
     public static Area initArea(int x, int y) {

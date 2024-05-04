@@ -48,3 +48,9 @@ o
 ?src/main/java/ua/javarush/yegor/animal/settings/AnimalUnit.java,9\4\94c4a13ec15798efab5cf76af6c4ca1a29bfebd9
 b
 2src/main/java/ua/javarush/yegor/island/Island.java,f\b\fb62d9ce01ea333a7e9a5f93393f626fd04fec41
+}
+Msrc/main/java/ua/javarush/yegor/animal/settings/utils/AnimalSettingsUtil.java,d\0\d006e3b5995d73cc8d9432968c7dc7b17452166f
+c
+3src/main/java/ua/javarush/yegor/residences/Fox.java,a\2\a27ce719dacdad95cb7830069cfbe55b8c13b21f
+d
+4src/main/java/ua/javarush/yegor/residences/Bear.java,0\6\0667ab30c392b2f0a60aadac2a2a255ca3eb322d

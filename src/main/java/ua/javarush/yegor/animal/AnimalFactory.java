@@ -1,7 +1,9 @@
 package ua.javarush.yegor.animal;
 
+import ua.javarush.yegor.residences.Bear;
 import ua.javarush.yegor.residences.Boa;
 import ua.javarush.yegor.residences.Duck;
+import ua.javarush.yegor.residences.Fox;
 import ua.javarush.yegor.residences.Wolf;
 
 import java.util.HashMap;
@@ -23,6 +25,8 @@ public final class AnimalFactory {
         CLASS_TO_INSTANCE_SUPPLIER.put(Duck.class, Duck::new);
         CLASS_TO_INSTANCE_SUPPLIER.put(Wolf.class, Wolf::new);
         CLASS_TO_INSTANCE_SUPPLIER.put(Boa.class, Boa::new);
+        CLASS_TO_INSTANCE_SUPPLIER.put(Fox.class, Fox::new);
+        CLASS_TO_INSTANCE_SUPPLIER.put(Bear.class, Bear::new);
     }
 
     public static Animal createAnimal(Class<? extends Animal> clazz) {

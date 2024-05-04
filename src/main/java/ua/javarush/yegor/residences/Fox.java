@@ -12,11 +12,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
+@Settings(settingsFile = "fox.json")
+public class Fox extends Predator {
 
-@Settings(settingsFile = "boa.json")
-public class Boa extends Predator {
-
-    private static final AnimalUnit ANIMAL_UNIT = AnimalSettingsUtil.getAnimalUnit(Wolf.class);
+    private static final AnimalUnit ANIMAL_UNIT = AnimalSettingsUtil.getAnimalUnit(Fox.class);
 
     @Override
     public void eat(Area area) {
@@ -25,7 +24,7 @@ public class Boa extends Predator {
             for (Animal animal : animalSet) {
                 if (animal instanceof Duck duck && duck.isAlive()) {
                     int chanceToEat = ThreadLocalRandom.current().nextInt(0, 100);
-                    if (chanceToEat < 10) {
+                    if (chanceToEat < 60) {
                         duck.setHealthPoints(0);
                         this.setHealthPoints(100);
                         break;
@@ -40,10 +39,10 @@ public class Boa extends Predator {
         Map<Class<? extends Animal>, Set<Animal>> animals = area.getAnimals();
         for (Set<Animal> animalSet : animals.values()) {
             for (Animal animal : animalSet) {
-                if (animal instanceof Boa && !area.isFull(Boa.class)) {
+                if (animal instanceof Fox && !area.isFull(Fox.class)) {
                     int chanceToReproduce = ThreadLocalRandom.current().nextInt(0, 100);
                     if (chanceToReproduce < 1) {
-                        Animal bornAnimal = AnimalFactory.createAnimal(Boa.class);
+                        Animal bornAnimal = AnimalFactory.createAnimal(Fox.class);
                         area.addAnimal(bornAnimal);
                     }
                 }
@@ -57,6 +56,6 @@ public class Boa extends Predator {
 
     @Override
     public int getNumberOfMovements() {
-        return Boa.getAnimalUnit().speed();
+        return Fox.getAnimalUnit().speed();
     }
 }
