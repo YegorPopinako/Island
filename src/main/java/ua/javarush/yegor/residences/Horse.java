@@ -25,7 +25,7 @@ public class Horse extends Herbivorous {
             for (Animal animal : animalSet) {
                 if (animal instanceof Horse && !area.isFull(Horse.class)) {
                     int chanceToReproduce = ThreadLocalRandom.current().nextInt(0, 100);
-                    if (chanceToReproduce < 15) {
+                    if (chanceToReproduce < 10) {
                         Animal bornAnimal = AnimalFactory.createAnimal(Horse.class);
                         area.addAnimal(bornAnimal);
                     }

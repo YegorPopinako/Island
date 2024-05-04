@@ -38,7 +38,7 @@ public class Eagle extends Predator {
             for (Animal animal : animalSet) {
                 if (animal instanceof Eagle && !area.isFull(Eagle.class)) {
                     int chanceToReproduce = ThreadLocalRandom.current().nextInt(0, 100);
-                    if (chanceToReproduce < 1) {
+                    if (chanceToReproduce < 2) {
                         Animal bornAnimal = AnimalFactory.createAnimal(Eagle.class);
                         area.addAnimal(bornAnimal);
                     }

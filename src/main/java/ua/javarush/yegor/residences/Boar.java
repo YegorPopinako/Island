@@ -48,7 +48,7 @@ public class Boar extends Herbivorous {
         Set<Plant> plants = area.getPlants();
         for (Plant plant : plants) {
             int chanceToEat = ThreadLocalRandom.current().nextInt(0, 100);
-            if (chanceToEat < 10 && this.isAlive()) {
+            if (chanceToEat < 1 && this.isAlive()) {
                 area.removePlant(plant);
                 this.setHealthPoints(100);
                 break;

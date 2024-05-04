@@ -17,7 +17,6 @@ public class Caterpillar extends Herbivorous {
 
     @Override
     public void reproduce(Area area) {
-
     }
 
     @Override

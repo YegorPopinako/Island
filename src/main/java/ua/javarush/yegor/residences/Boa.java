@@ -38,7 +38,7 @@ public class Boa extends Predator {
             for (Animal animal : animalSet) {
                 if (animal instanceof Boa && !area.isFull(Boa.class)) {
                     int chanceToReproduce = ThreadLocalRandom.current().nextInt(0, 100);
-                    if (chanceToReproduce < 1) {
+                    if (chanceToReproduce < 2) {
                         Animal bornAnimal = AnimalFactory.createAnimal(Boa.class);
                         area.addAnimal(bornAnimal);
                     }

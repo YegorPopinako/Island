@@ -24,7 +24,7 @@ public class Rabbit extends Herbivorous {
             for (Animal animal : animalSet) {
                 if (animal instanceof Rabbit && !area.isFull(Rabbit.class)) {
                     int chanceToReproduce = ThreadLocalRandom.current().nextInt(0, 100);
-                    if (chanceToReproduce < 10) {
+                    if (chanceToReproduce < 5) {
                         Animal bornAnimal = AnimalFactory.createAnimal(Rabbit.class);
                         area.addAnimal(bornAnimal);
                     }

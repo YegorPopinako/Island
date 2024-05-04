@@ -29,8 +29,9 @@ public class TaskManager {
         this.executorService = executorService;
     }
 
-    public void performTasks(Island island){
+    public void performTasks(Island island) {
         performMovementTasks(island);
+
         performPlantReproduceTasks(island);
         performReproduceTasks(island);
         performEatTasks(island);
@@ -38,24 +39,20 @@ public class TaskManager {
     }
 
     private void performPlantReproduceTasks(Island island) {
-        Set<Plant> plantsToReproduce;
         for (Area[] row : island.getAreas()) {
             for (Area area : row) {
-                plantsToReproduce = new HashSet<>(area.getPlants());
-                reproducePlants(area, plantsToReproduce);
+                reproducePlants(area);
             }
         }
     }
 
-    private void reproducePlants(Area area, Set<Plant> plantsToReproduce) {
-        for (Plant plant : plantsToReproduce) {
-            ReproducePlantTask task = new ReproducePlantTask(area, plant);
-            Future<?> future = executorService.submit(task);
-            try {
-                future.get();
-            } catch (InterruptedException | ExecutionException e) {
-                e.getCause();
-            }
+    private void reproducePlants(Area area) {
+        ReproducePlantTask task = new ReproducePlantTask(area);
+        Future<?> future = executorService.submit(task);
+        try {
+            future.get();
+        } catch (InterruptedException | ExecutionException e) {
+            e.getCause();
         }
     }
 
@@ -72,7 +69,7 @@ public class TaskManager {
     private void reproduceAnimals(Area area, Map<Class<? extends Animal>, Set<Animal>> animals) {
         for (var entry : animals.entrySet()) {
             for (Animal animal : entry.getValue()) {
-                if(animal.isAlive()){
+                if (animal.isAlive()) {
                     ReproduceTask task = new ReproduceTask(area, animal);
                     Future<?> future = executorService.submit(task);
                     try {
@@ -153,7 +150,7 @@ public class TaskManager {
     }
 
     private void quantityOfMovements(Area area, Animal animal) {
-        for (int i = 0; i < animal. getNumberOfMovements(); i++) {
+        for (int i = 0; i < animal.getNumberOfMovements(); i++) {
             Area destination = findAdjacentArea(area, animal);
             MoveTask task = new MoveTask(area, destination, animal);
             Future<?> future = executorService.submit(task);

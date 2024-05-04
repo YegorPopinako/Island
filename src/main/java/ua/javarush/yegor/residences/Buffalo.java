@@ -24,7 +24,7 @@ public class Buffalo extends Herbivorous {
             for (Animal animal : animalSet) {
                 if (animal instanceof Buffalo && !area.isFull(Buffalo.class)) {
                     int chanceToReproduce = ThreadLocalRandom.current().nextInt(0, 100);
-                    if (chanceToReproduce < 10) {
+                    if (chanceToReproduce < 15) {
                         Animal bornAnimal = AnimalFactory.createAnimal(Buffalo.class);
                         area.addAnimal(bornAnimal);
                     }

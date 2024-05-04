@@ -24,7 +24,7 @@ public class Deer extends Herbivorous {
             for (Animal animal : animalSet) {
                 if (animal instanceof Deer && !area.isFull(Deer.class)) {
                     int chanceToReproduce = ThreadLocalRandom.current().nextInt(0, 100);
-                    if (chanceToReproduce < 10) {
+                    if (chanceToReproduce < 30) {
                         Animal bornAnimal = AnimalFactory.createAnimal(Deer.class);
                         area.addAnimal(bornAnimal);
                     }

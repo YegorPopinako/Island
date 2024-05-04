@@ -18,7 +18,7 @@ import java.util.concurrent.locks.ReentrantLock;
 @Getter
 public class Area {
 
-    private final int MAX_PLANT_NUMBER = 400;
+    private final int MAX_PLANT_NUMBER = 1000;
 
     private final int coordinateX;
     private final int coordinateY;
@@ -76,7 +76,7 @@ public class Area {
     }
 
     private static void initPlants(Area area) {
-        int number = ThreadLocalRandom.current().nextInt(200, area.MAX_PLANT_NUMBER + 1);
+        int number = ThreadLocalRandom.current().nextInt(300, area.MAX_PLANT_NUMBER + 1);
         for(int i = 0; i < number; i++) {
             area.plants.add(new Plant());
         }
@@ -116,6 +116,17 @@ public class Area {
 
     public void removePlant(Plant plant) {
         plants.remove(plant);
+    }
+
+    public void reproducePlants() {
+        for(int i = 0; i < ThreadLocalRandom.current().nextInt(600, MAX_PLANT_NUMBER); i++) {
+            if(plants.size() < MAX_PLANT_NUMBER) {
+                this.addPlant(new Plant());
+            }
+            else {
+                break;
+            }
+        }
     }
 
     @Override

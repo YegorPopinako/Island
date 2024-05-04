@@ -12,7 +12,7 @@ public abstract class Herbivorous extends Animal {
     public void eat(Area area){
         Set<Plant> plants = area.getPlants();
         for (Plant plant : plants) {
-            int chanceToEat = ThreadLocalRandom.current().nextInt(0, 100);
+            int chanceToEat = ThreadLocalRandom.current().nextInt(0, 200);
             if (chanceToEat < 1 && this.isAlive()) {
                 area.removePlant(plant);
                 this.setHealthPoints(100);
