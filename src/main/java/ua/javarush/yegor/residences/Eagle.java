@@ -8,6 +8,7 @@ import ua.javarush.yegor.animal.settings.Settings;
 import ua.javarush.yegor.animal.settings.utils.AnimalSettingsUtil;
 import ua.javarush.yegor.island.Area;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
@@ -17,21 +18,17 @@ public class Eagle extends Predator {
 
     private static final AnimalUnit ANIMAL_UNIT = AnimalSettingsUtil.getAnimalUnit(Eagle.class);
 
+    private static final Map<Class<? extends Animal>, Integer> ANIMAL_PROBABILITIES = new HashMap<>();
+    static {
+        ANIMAL_PROBABILITIES.put(Fox.class, 10);
+        ANIMAL_PROBABILITIES.put(Rabbit.class, 90);
+        ANIMAL_PROBABILITIES.put(Mouse.class, 90);
+        ANIMAL_PROBABILITIES.put(Duck.class, 80);
+    }
+
     @Override
-    public void eat(Area area) {
-        Map<Class<? extends Animal>, Set<Animal>> animals = area.getAnimals();
-        for (Set<Animal> animalSet : animals.values()) {
-            for (Animal animal : animalSet) {
-                if (animal instanceof Mouse duck && duck.isAlive()) {
-                    int chanceToEat = ThreadLocalRandom.current().nextInt(0, 100);
-                    if (chanceToEat < 80) {
-                        duck.setHealthPoints(0);
-                        this.setHealthPoints(100);
-                        break;
-                    }
-                }
-            }
-        }
+    protected Map<Class<? extends Animal>, Integer> getAnimalProbabilities() {
+        return ANIMAL_PROBABILITIES;
     }
 
     @Override

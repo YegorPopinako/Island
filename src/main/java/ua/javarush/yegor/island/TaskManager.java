@@ -11,6 +11,7 @@ import ua.javarush.yegor.tasks.ReproduceTask;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
@@ -94,8 +95,8 @@ public class TaskManager {
         }
     }
 
-    private void feedAnimals(Area area,Map<Class<? extends Animal>, Set<Animal>> animals) {
-        for (var entry : animals.entrySet()) {
+    private void feedAnimals(Area area, Map<Class<? extends Animal>, Set<Animal>> animals) {
+        for (var entry : new LinkedHashMap<>(animals).entrySet()) {
             for (Animal animal : entry.getValue()) {
                 FeedTask task = new FeedTask(area, animal);
                 Future<?> future = executorService.submit(task);
@@ -152,7 +153,7 @@ public class TaskManager {
     }
 
     private void quantityOfMovements(Area area, Animal animal) {
-        for (int i = 0; i < animal.getNumberOfMovements(); i++) {
+        for (int i = 0; i < animal. getNumberOfMovements(); i++) {
             Area destination = findAdjacentArea(area, animal);
             MoveTask task = new MoveTask(area, destination, animal);
             Future<?> future = executorService.submit(task);

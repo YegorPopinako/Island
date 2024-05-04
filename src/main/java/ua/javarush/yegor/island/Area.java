@@ -18,7 +18,7 @@ import java.util.concurrent.locks.ReentrantLock;
 @Getter
 public class Area {
 
-    private final int MAX_PLANT_NUMBER = 100;
+    private final int MAX_PLANT_NUMBER = 400;
 
     private final int coordinateX;
     private final int coordinateY;
@@ -28,9 +28,9 @@ public class Area {
     private final Set<Plant> plants = new HashSet<>();
     private final Map<Class<? extends Animal>, Lock> classToLock = new HashMap<>();
     {
-        classToLock.put(Mouse.class, new ReentrantLock());
         classToLock.put(Wolf.class, new ReentrantLock());
         classToLock.put(Boa.class, new ReentrantLock());
+        classToLock.put(Boar.class, new ReentrantLock());
         classToLock.put(Fox.class, new ReentrantLock());
         classToLock.put(Bear.class, new ReentrantLock());
         classToLock.put(Eagle.class, new ReentrantLock());
@@ -41,7 +41,7 @@ public class Area {
         classToLock.put(Sheep.class, new ReentrantLock());
         classToLock.put(Duck.class, new ReentrantLock());
         classToLock.put(Buffalo.class, new ReentrantLock());
-        classToLock.put(Boar.class, new ReentrantLock());
+        classToLock.put(Mouse.class, new ReentrantLock());
         classToLock.put(Caterpillar.class, new ReentrantLock());
     }
 
@@ -51,8 +51,9 @@ public class Area {
     }
 
     static {
-        ANIMAL_MAX.put(Mouse.class, Mouse.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Wolf.class, Wolf.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Boar.class, Boar.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Mouse.class, Mouse.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Boa.class, Boa.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Fox.class, Fox.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Bear.class, Bear.getAnimalUnit().maxQuantity());
@@ -64,7 +65,6 @@ public class Area {
         ANIMAL_MAX.put(Sheep.class, Sheep.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Duck.class, Duck.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Buffalo.class, Buffalo.getAnimalUnit().maxQuantity());
-        ANIMAL_MAX.put(Boar.class, Boar.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Caterpillar.class, Caterpillar.getAnimalUnit().maxQuantity());
     }
 
@@ -76,7 +76,7 @@ public class Area {
     }
 
     private static void initPlants(Area area) {
-        int number = ThreadLocalRandom.current().nextInt(20, area.MAX_PLANT_NUMBER + 1);
+        int number = ThreadLocalRandom.current().nextInt(200, area.MAX_PLANT_NUMBER + 1);
         for(int i = 0; i < number; i++) {
             area.plants.add(new Plant());
         }

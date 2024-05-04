@@ -54,8 +54,6 @@ c
 3src/main/java/ua/javarush/yegor/residences/Fox.java,a\2\a27ce719dacdad95cb7830069cfbe55b8c13b21f
 d
 4src/main/java/ua/javarush/yegor/residences/Bear.java,0\6\0667ab30c392b2f0a60aadac2a2a255ca3eb322d
-`
-0src/main/java/ua/javarush/yegor/tasks/Eagle.java,8\6\86c4cdfee182f7f49d7707a1adb0a2435dbc2246
 e
 5src/main/java/ua/javarush/yegor/residences/Horse.java,3\8\380e17bb5f7e94dfab9faa94c6703c7f4634847b
 d
@@ -74,3 +72,5 @@ k
 ;src/main/java/ua/javarush/yegor/residences/Caterpillar.java,1\5\15bd7e0b23b7a3365a717f2d23266bdf68701e68
 e
 5src/main/java/ua/javarush/yegor/residences/Mouse.java,e\9\e9f6db011380b3656ea4dc4570511504970be427
+e
+5src/main/java/ua/javarush/yegor/residences/Eagle.java,9\4\944b4a9d30c38602cc0149cb0260db7bfccd6980

@@ -7,6 +7,7 @@ import ua.javarush.yegor.animal.settings.AnimalUnit;
 import ua.javarush.yegor.animal.settings.Settings;
 import ua.javarush.yegor.animal.settings.utils.AnimalSettingsUtil;
 import ua.javarush.yegor.island.Area;
+import ua.javarush.yegor.residences.Plant;
 
 import java.util.Map;
 import java.util.Set;
@@ -17,6 +18,36 @@ public class Mouse extends Herbivorous {
 
     private static final AnimalUnit ANIMAL_UNIT = AnimalSettingsUtil.getAnimalUnit(Mouse.class);
 
+    @Override
+    public void eat(Area area) {
+        Map<Class<? extends Animal>, Set<Animal>> animals = area.getAnimals();
+        for (Set<Animal> animalSet : animals.values()) {
+            for (Animal animal : animalSet) {
+                if (animal instanceof Caterpillar && animal.isAlive()) {
+                    int chanceToEat = ThreadLocalRandom.current().nextInt(0, 100);
+                    if (chanceToEat < 90 && this.isAlive()) {
+                        area.removeAnimal(animal);
+                        this.setHealthPoints(100);
+                        break;
+                    }
+                }
+            }
+        }
+
+        eatPlants(area);
+    }
+
+    private void eatPlants(Area area) {
+        Set<Plant> plants = area.getPlants();
+        for (Plant plant : plants) {
+            int chanceToEat = ThreadLocalRandom.current().nextInt(0, 100);
+            if (chanceToEat < 10 && this.isAlive()) {
+                area.removePlant(plant);
+                this.setHealthPoints(100);
+                break;
+            }
+        }
+    }
 
     @Override
     public void reproduce(Area area) {
