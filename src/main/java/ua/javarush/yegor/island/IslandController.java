@@ -1,16 +1,8 @@
 package ua.javarush.yegor.island;
 
 import ua.javarush.yegor.animal.Animal;
-import ua.javarush.yegor.residences.Bear;
-import ua.javarush.yegor.residences.Boa;
-import ua.javarush.yegor.residences.Duck;
-import ua.javarush.yegor.residences.Fox;
-import ua.javarush.yegor.residences.Plant;
-import ua.javarush.yegor.residences.Wolf;
-import ua.javarush.yegor.tasks.Eagle;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;

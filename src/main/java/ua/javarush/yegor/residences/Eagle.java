@@ -1,4 +1,4 @@
-package ua.javarush.yegor.tasks;
+package ua.javarush.yegor.residences;
 
 import ua.javarush.yegor.animal.Animal;
 import ua.javarush.yegor.animal.AnimalFactory;
@@ -7,8 +7,6 @@ import ua.javarush.yegor.animal.settings.AnimalUnit;
 import ua.javarush.yegor.animal.settings.Settings;
 import ua.javarush.yegor.animal.settings.utils.AnimalSettingsUtil;
 import ua.javarush.yegor.island.Area;
-import ua.javarush.yegor.residences.Duck;
-import ua.javarush.yegor.residences.Wolf;
 
 import java.util.Map;
 import java.util.Set;

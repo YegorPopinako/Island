@@ -56,3 +56,5 @@ d
 4src/main/java/ua/javarush/yegor/residences/Bear.java,0\6\0667ab30c392b2f0a60aadac2a2a255ca3eb322d
 `
 0src/main/java/ua/javarush/yegor/tasks/Eagle.java,8\6\86c4cdfee182f7f49d7707a1adb0a2435dbc2246
+e
+5src/main/java/ua/javarush/yegor/residences/Horse.java,3\8\380e17bb5f7e94dfab9faa94c6703c7f4634847b

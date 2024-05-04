@@ -6,10 +6,11 @@ import ua.javarush.yegor.animal.AnimalFactory;
 import ua.javarush.yegor.residences.Bear;
 import ua.javarush.yegor.residences.Boa;
 import ua.javarush.yegor.residences.Fox;
+import ua.javarush.yegor.residences.Horse;
 import ua.javarush.yegor.residences.Plant;
 import ua.javarush.yegor.residences.Duck;
 import ua.javarush.yegor.residences.Wolf;
-import ua.javarush.yegor.tasks.Eagle;
+import ua.javarush.yegor.residences.Eagle;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -39,6 +40,8 @@ public class Area {
         classToLock.put(Boa.class, new ReentrantLock());
         classToLock.put(Fox.class, new ReentrantLock());
         classToLock.put(Bear.class, new ReentrantLock());
+        classToLock.put(Eagle.class, new ReentrantLock());
+        classToLock.put(Horse.class, new ReentrantLock());
     }
 
     private Area(int coordinateX, int coordinateY) {
@@ -53,6 +56,7 @@ public class Area {
         ANIMAL_MAX.put(Fox.class, Fox.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Bear.class, Bear.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Eagle.class, Eagle.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Horse.class, Horse.getAnimalUnit().maxQuantity());
     }
 
     public static Area initArea(int x, int y) {
