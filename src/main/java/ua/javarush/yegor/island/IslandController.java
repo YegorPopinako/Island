@@ -7,6 +7,7 @@ import ua.javarush.yegor.residences.Duck;
 import ua.javarush.yegor.residences.Fox;
 import ua.javarush.yegor.residences.Plant;
 import ua.javarush.yegor.residences.Wolf;
+import ua.javarush.yegor.tasks.Eagle;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -49,6 +50,7 @@ public class IslandController {
         int boaAmount = 0;
         int foxAmount = 0;
         int bearAmount = 0;
+        int eagleAmount = 0;
         for (Area[] row : island.getAreas()) {
             for (Area area : row) {
                plantsAmount += area.getPlants().size();
@@ -65,6 +67,8 @@ public class IslandController {
                            foxAmount++;
                        } else if (animal.getClass().equals(Bear.class)) {
                            bearAmount++;
+                       } else if (animal.getClass().equals(Eagle.class)) {
+                           eagleAmount++;
                        }
                    }
                }
@@ -77,5 +81,6 @@ public class IslandController {
         System.out.println("Boa amount: " + boaAmount);
         System.out.println("Fox amount: " + foxAmount);
         System.out.println("Bear amount: " + bearAmount);
+        System.out.println("Eagle amount: " + eagleAmount);
     }
 }

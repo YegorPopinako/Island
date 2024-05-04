@@ -9,6 +9,7 @@ import ua.javarush.yegor.residences.Fox;
 import ua.javarush.yegor.residences.Plant;
 import ua.javarush.yegor.residences.Duck;
 import ua.javarush.yegor.residences.Wolf;
+import ua.javarush.yegor.tasks.Eagle;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -51,6 +52,7 @@ public class Area {
         ANIMAL_MAX.put(Boa.class, Boa.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Fox.class, Fox.getAnimalUnit().maxQuantity());
         ANIMAL_MAX.put(Bear.class, Bear.getAnimalUnit().maxQuantity());
+        ANIMAL_MAX.put(Eagle.class, Eagle.getAnimalUnit().maxQuantity());
     }
 
     public static Area initArea(int x, int y) {
