@@ -3,6 +3,7 @@ package ua.javarush.yegor.animal;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import ua.javarush.yegor.animal.settings.AnimalUnit;
 import ua.javarush.yegor.direction.Direction;
 import ua.javarush.yegor.island.Area;
 
