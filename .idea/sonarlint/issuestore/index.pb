@@ -74,3 +74,5 @@ e
 5src/main/java/ua/javarush/yegor/residences/Mouse.java,e\9\e9f6db011380b3656ea4dc4570511504970be427
 e
 5src/main/java/ua/javarush/yegor/residences/Eagle.java,9\4\944b4a9d30c38602cc0149cb0260db7bfccd6980
+u
+Esrc/main/java/ua/javarush/yegor/animal/classification/Omnivorous.java,1\e\1e14dac001ba887129d748e24be274cc4ce995e8

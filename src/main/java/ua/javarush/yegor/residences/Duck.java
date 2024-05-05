@@ -3,19 +3,30 @@ package ua.javarush.yegor.residences;
 import ua.javarush.yegor.animal.Animal;
 import ua.javarush.yegor.animal.AnimalFactory;
 import ua.javarush.yegor.animal.classification.Herbivorous;
+import ua.javarush.yegor.animal.classification.Omnivorous;
 import ua.javarush.yegor.animal.settings.AnimalUnit;
 import ua.javarush.yegor.animal.settings.Settings;
 import ua.javarush.yegor.animal.settings.utils.AnimalSettingsUtil;
 import ua.javarush.yegor.island.Area;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Settings(settingsFile = "duck.json")
-public class Duck extends Herbivorous {
+public class Duck extends Omnivorous {
 
     private static final AnimalUnit ANIMAL_UNIT = AnimalSettingsUtil.getAnimalUnit(Duck.class);
+    private static final Map<Class<? extends Animal>, Integer> FOOD_PROBABILITIES = new HashMap<>();
+    static {
+        FOOD_PROBABILITIES.put(Caterpillar.class, 90);
+    }
+
+    @Override
+    protected Map<Class<? extends Animal>, Integer> getAnimalProbabilities() {
+        return FOOD_PROBABILITIES;
+    }
 
     @Override
     public void eat(Area area) {

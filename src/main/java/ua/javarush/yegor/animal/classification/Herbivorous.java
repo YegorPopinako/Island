@@ -8,7 +8,6 @@ import ua.javarush.yegor.residences.Plant;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Set;
-import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Herbivorous extends Animal {
 
