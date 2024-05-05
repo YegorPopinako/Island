@@ -3,7 +3,6 @@ package ua.javarush.yegor.residences;
 import ua.javarush.yegor.animal.Animal;
 import ua.javarush.yegor.animal.AnimalFactory;
 import ua.javarush.yegor.animal.classification.Herbivorous;
-import ua.javarush.yegor.animal.classification.Predator;
 import ua.javarush.yegor.animal.settings.AnimalUnit;
 import ua.javarush.yegor.animal.settings.Settings;
 import ua.javarush.yegor.animal.settings.utils.AnimalSettingsUtil;
