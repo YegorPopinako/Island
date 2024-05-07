@@ -21,7 +21,7 @@ public class AnimalSettingsUtil {
                     return mapper.readValue(inputStream, AnimalUnit.class);
                 }
             } catch (Exception e) {
-                e.getCause();
+                throw new NullPointerException(e.getMessage());
             }
         }
         throw new IllegalArgumentException("Class is not annotated with @Settings: " + clazz.getName());
