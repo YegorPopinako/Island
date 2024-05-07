@@ -119,7 +119,7 @@ public class Area {
     }
 
     public void reproducePlants() {
-        for(int i = 0; i < ThreadLocalRandom.current().nextInt(600, MAX_PLANT_NUMBER); i++) {
+        for(int i = 0; i < ThreadLocalRandom.current().nextInt(0, MAX_PLANT_NUMBER); i++) {
             if(plants.size() < MAX_PLANT_NUMBER) {
                 this.addPlant(new Plant());
             }

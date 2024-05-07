@@ -76,3 +76,5 @@ e
 5src/main/java/ua/javarush/yegor/residences/Eagle.java,9\4\944b4a9d30c38602cc0149cb0260db7bfccd6980
 u
 Esrc/main/java/ua/javarush/yegor/animal/classification/Omnivorous.java,1\e\1e14dac001ba887129d748e24be274cc4ce995e8
+h
+8src/main/java/ua/javarush/yegor/direction/Direction.java,7\a\7ae91e4924f5a7f942bceeea130993499af93338

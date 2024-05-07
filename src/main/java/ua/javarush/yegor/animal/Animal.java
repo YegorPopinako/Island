@@ -3,7 +3,6 @@ package ua.javarush.yegor.animal;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import ua.javarush.yegor.animal.settings.AnimalUnit;
 import ua.javarush.yegor.direction.Direction;
 import ua.javarush.yegor.island.Area;
 
@@ -14,7 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public abstract class Animal implements Movable {
 
     @EqualsAndHashCode.Include
-    private final int id;
+    private final String id;
 
     @Getter
     @Setter
@@ -23,10 +22,8 @@ public abstract class Animal implements Movable {
     @Setter
     private boolean hasMoved;
 
-    Direction[] directions = Direction.values();
-
     protected Animal() {
-        this.id = UUID.randomUUID().toString().hashCode();
+        this.id = UUID.randomUUID().toString();
         this.healthPoints = 100;
     }
 
@@ -34,7 +31,7 @@ public abstract class Animal implements Movable {
         this.healthPoints -= 20;
         if (!hasMoved) {
             ThreadLocalRandom random = ThreadLocalRandom.current();
-            Direction direction = directions[random.nextInt(0, directions.length)];
+            Direction direction = Direction.values()[random.nextInt(0, Direction.values().length - 1)];
             hasMoved = true;
             return direction;
         } else {
